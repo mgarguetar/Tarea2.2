@@ -7,46 +7,30 @@ class ItemList extends StatelessWidget {
 
   ItemList({required this.pokemons, required this.onPokemonSelected});
 
+  // Mapeo de tipos de Pokémon a colores
+  static const Map<String, MaterialColor> typeColors = {
+    'fire': Colors.red,
+    'water': Colors.blue,
+    'grass': Colors.green,
+    'electric': Colors.yellow,
+    'psychic': Colors.purple,
+    'ice': Colors.cyan,
+    'dragon': Colors.indigo,
+    'dark': Colors.brown,
+    'fairy': Colors.pink,
+    'fighting': Colors.orange,
+    'flying': Colors.lightBlue,
+    'poison': Colors.deepPurple,
+    'ground': Colors.brown,
+    'rock': Colors.grey,
+    'bug': Colors.lightGreen,
+    'ghost': Colors.deepPurple,
+    'steel': Colors.blueGrey,
+  };
+
   // Función para obtener el color según el tipo de Pokémon
   Color getTypeColor(String type) {
-    switch (type) {
-      case 'fire':
-        return Colors.red[300]!;
-      case 'water':
-        return Colors.blue[300]!;
-      case 'grass':
-        return Colors.green[300]!;
-      case 'electric':
-        return Colors.yellow[600]!;
-      case 'psychic':
-        return Colors.purple[300]!;
-      case 'ice':
-        return Colors.cyan[200]!;
-      case 'dragon':
-        return Colors.indigo[300]!;
-      case 'dark':
-        return Colors.brown[300]!;
-      case 'fairy':
-        return Colors.pink[200]!;
-      case 'fighting':
-        return Colors.orange[300]!;
-      case 'flying':
-        return Colors.lightBlue[200]!;
-      case 'poison':
-        return Colors.deepPurple[300]!;
-      case 'ground':
-        return Colors.brown[400]!;
-      case 'rock':
-        return Colors.grey[500]!;
-      case 'bug':
-        return Colors.lightGreen[300]!;
-      case 'ghost':
-        return Colors.deepPurple[400]!;
-      case 'steel':
-        return Colors.blueGrey[300]!;
-      default:
-        return Colors.grey[300]!;
-    }
+    return typeColors[type]?.shade300 ?? Colors.grey.shade300;
   }
 
   @override
@@ -58,7 +42,7 @@ class ItemList extends StatelessWidget {
         final primaryType = pokemon.types.isNotEmpty ? pokemon.types[0].type.name : 'unknown';
 
         return GestureDetector(
-          onTap: () => onPokemonSelected(pokemon), // Manejar el clic
+          onTap: () => onPokemonSelected(pokemon),
           child: Card(
             margin: EdgeInsets.all(8.0),
             elevation: 4.0,
@@ -74,7 +58,7 @@ class ItemList extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8.0),
-                      color: Colors.white.withOpacity(0.3), // Fondo semi-transparente
+                      color: Colors.white.withOpacity(0.3),
                     ),
                     child: Image.network(
                       pokemon.sprites.frontDefault,
@@ -93,7 +77,7 @@ class ItemList extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: Colors.black, // Texto en blanco para contrastar
+                            color: Colors.black,
                           ),
                         ),
                         SizedBox(height: 8.0),
@@ -101,19 +85,19 @@ class ItemList extends StatelessWidget {
                           'Type: ${primaryType.toUpperCase()}',
                           style: TextStyle(
                             fontSize: 14,
-                            color: Colors.black.withOpacity(0.8), // Texto semi-transparente
+                            color: Colors.black.withOpacity(0.8),
                           ),
                         ),
                         SizedBox(height: 4.0),
                         Text(
-                          'Height: ${pokemon.height / 10} m', // Convertir a metros
+                          'Height: ${pokemon.height / 10} m',
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.black.withOpacity(0.8),
                           ),
                         ),
                         Text(
-                          'Weight: ${pokemon.weight / 10} kg', // Convertir a kilogramos
+                          'Weight: ${pokemon.weight / 10} kg',
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.black.withOpacity(0.8),

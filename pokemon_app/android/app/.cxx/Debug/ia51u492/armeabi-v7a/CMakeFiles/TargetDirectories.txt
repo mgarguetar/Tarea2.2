@@ -1,0 +1,2 @@
+C:/Users/merar/OneDrive/Desktop/Pokemon/Tarea2.2/pokemon_app/android/app/.cxx/Debug/ia51u492/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/merar/OneDrive/Desktop/Pokemon/Tarea2.2/pokemon_app/android/app/.cxx/Debug/ia51u492/armeabi-v7a/CMakeFiles/rebuild_cache.dir

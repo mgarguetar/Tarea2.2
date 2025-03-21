@@ -1,0 +1,1 @@
+ C:\\Users\\merar\\OneDrive\\Desktop\\Pokemon\\Tarea2.2\\pokemon_app\\.dart_tool\\flutter_build\\9012afdb5bc3cb59b4d4eaf43290515e\\native_assets.json: 
