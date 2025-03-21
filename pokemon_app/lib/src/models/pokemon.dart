@@ -31,7 +31,7 @@ class Pokemon {
       sprites: Sprites.fromJson(json['sprites']),
       types: types,
       abilities: abilities,
-      species: json['species']['name'], // Obtener el nombre de la especie
+      species: json['species']['name'],
     );
   }
 
