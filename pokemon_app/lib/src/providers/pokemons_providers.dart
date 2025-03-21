@@ -4,7 +4,6 @@ import 'package:pokemon_app/src/models/pokemon.dart';
 
 class PokemonsProvider {
   Future<List<Pokemon>> fetchPokemons() async {
-    // Obtener la lista de Pokémon
     final response = await http.get(Uri.parse('https://pokeapi.co/api/v2/pokemon?limit=20'));
 
     if (response.statusCode == 200) {
@@ -12,7 +11,7 @@ class PokemonsProvider {
       var pokemonListResponse = PokemonListResponse.fromJson(json.decode(response.body));
       List<Pokemon> pokemons = [];
 
-      // Obtener los detalles de cada Pokémon
+      //Para obtener los detalles de cada Pokémon
       for (var item in pokemonListResponse.results) {
         final pokemonResponse = await http.get(Uri.parse(item.url));
         if (pokemonResponse.statusCode == 200) {
@@ -21,7 +20,7 @@ class PokemonsProvider {
         }
       }
 
-      return pokemons; // Devuelve una lista de Pokémon
+      return pokemons;
     } else {
       throw Exception('Failed to load Pokémon list');
     }
