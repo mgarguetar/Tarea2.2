@@ -7,7 +7,6 @@ class ItemList extends StatelessWidget {
 
   ItemList({required this.pokemons, required this.onPokemonSelected});
 
-  // Mapeo de tipos de Pokémon a colores
   static const Map<String, MaterialColor> typeColors = {
     'fire': Colors.red,
     'water': Colors.blue,
@@ -82,7 +81,7 @@ class ItemList extends StatelessWidget {
                         ),
                         SizedBox(height: 8.0),
                         Text(
-                          'Type: ${primaryType.toUpperCase()}',
+                          'Tipo: ${primaryType.toUpperCase()}',
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.black.withOpacity(0.8),
@@ -90,14 +89,14 @@ class ItemList extends StatelessWidget {
                         ),
                         SizedBox(height: 4.0),
                         Text(
-                          'Height: ${pokemon.height / 10} m',
+                          'Altura: ${pokemon.height / 10} m',
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.black.withOpacity(0.8),
                           ),
                         ),
                         Text(
-                          'Weight: ${pokemon.weight / 10} kg',
+                          'Peso: ${pokemon.weight / 10} kg',
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.black.withOpacity(0.8),
