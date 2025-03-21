@@ -8,7 +8,6 @@ class PokemonDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Obtener el tamaño de la pantalla
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -18,27 +17,24 @@ class PokemonDetailPage extends StatelessWidget {
       backgroundColor: getTypeColor(pokemon.types[0].type.name),
       body: Column(
         children: [
-          // Imagen del Pokémon
           SizedBox(
             height: screenHeight * 0.4, 
             child: Center(
               child: Image.network(
-                width: screenHeight * 0.5, // 50% de la altura de la pantalla
+                width: screenHeight * 0.5,
                 pokemon.sprites.frontDefault,
-                fit: BoxFit.contain, // Ajustar la imagen dentro del espacio
+                fit: BoxFit.contain,
               ),
             ),
           ),
-          // Contenedor blanco para la información
           Expanded(
             child: Container(
-              color: Colors.white, // Fondo blanco para la parte inferior
+              color: Colors.white,
               padding: EdgeInsets.all(16.0),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Nombre del Pokémon
                     Center(
                       child: Text(
                         pokemon.name.toUpperCase(),
@@ -50,18 +46,9 @@ class PokemonDetailPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    // Información básica
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(16.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
-                            blurRadius: 4.0,
-                            offset: Offset(0, 2),
-                          ),
-                        ],
                       ),
                       padding: EdgeInsets.all(16.0),
                       child: Column(
@@ -88,7 +75,6 @@ class PokemonDetailPage extends StatelessWidget {
                             style: TextStyle(fontSize: 16),
                           ),
                           SizedBox(height: 16.0),
-                          // Habilidades
                           Text(
                             'Habilidades:',
                             style: TextStyle(
@@ -116,7 +102,6 @@ class PokemonDetailPage extends StatelessWidget {
     );
   }
 
-  // Función para obtener el color según el tipo de Pokémon
   Color getTypeColor(String name) {
     switch (name) {
       case 'normal':
@@ -160,9 +145,7 @@ class PokemonDetailPage extends StatelessWidget {
     }
   }
 
-  // Función para obtener el color del texto según el tipo del Pokémon
   Color getTextColor(String name) {
-    // Usamos un color oscuro para texto en fondos claros
     return name == 'normal' || name == 'fighting' || name == 'ground'
         ? Colors.black
         : Colors.white;

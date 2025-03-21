@@ -27,7 +27,6 @@ class ItemList extends StatelessWidget {
     'steel': Colors.blueGrey,
   };
 
-  // Función para obtener el color según el tipo de Pokémon
   Color getTypeColor(String type) {
     return typeColors[type]?.shade300 ?? Colors.grey.shade300;
   }
@@ -48,12 +47,11 @@ class ItemList extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),
             ),
-            color: getTypeColor(primaryType), // Color de fondo según el tipo
+            color: getTypeColor(primaryType),
             child: Padding(
               padding: EdgeInsets.all(16.0),
               child: Row(
                 children: [
-                  // Imagen del Pokémon
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8.0),
@@ -66,7 +64,6 @@ class ItemList extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 16.0),
-                  // Información del Pokémon
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

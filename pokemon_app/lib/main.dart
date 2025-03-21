@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Pokémon App',
-      routerConfig: router, // Usar el router definido en routes.dart
+      routerConfig: router,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

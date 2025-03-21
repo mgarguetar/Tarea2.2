@@ -33,10 +33,9 @@ class HomePage extends StatelessWidget {
             return ItemList(
               pokemons: snapshot.data!,
               onPokemonSelected: (pokemon) {
-                // Navegar a la pantalla de detalles usando Go Router
                 context.goNamed(
                   'pokemon-detail',
-                  extra: pokemon, // Pasar el objeto Pokémon como extra
+                  extra: pokemon,
                 );
               },
             );
