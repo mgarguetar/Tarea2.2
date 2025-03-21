@@ -102,52 +102,35 @@ class PokemonDetailPage extends StatelessWidget {
     );
   }
 
-  Color getTypeColor(String name) {
-    switch (name) {
-      case 'normal':
-        return Colors.brown;
-      case 'fighting':
-        return Colors.red;
-      case 'flying':
-        return Colors.blue;
-      case 'poison':
-        return Colors.purple;
-      case 'ground':
-        return Colors.orange;
-      case 'rock':
-        return Colors.grey;
-      case 'bug':
-        return Colors.green;
-      case 'ghost':
-        return Colors.indigo;
-      case 'steel':
-        return Colors.blueGrey;
-      case 'fire':
-        return Colors.red;
-      case 'water':
-        return Colors.blue;
-      case 'grass':
-        return Colors.green;
-      case 'electric':
-        return Colors.amber;
-      case 'psychic':
-        return Colors.pink;
-      case 'ice':
-        return Colors.cyan;
-      case 'dragon':
-        return Colors.indigo;
-      case 'dark':
-        return Colors.brown;
-      case 'fairy':
-        return Colors.pinkAccent;
-      default:
-        return Colors.grey;
-    }
-  }
+   final Map<String, Color> typeColors = {
+    'normal': Colors.brown,
+    'fighting': Colors.red,
+    'flying': Colors.blue,
+    'poison': Colors.purple,
+    'ground': Colors.orange,
+    'rock': Colors.grey,
+    'bug': Colors.green,
+    'ghost': Colors.indigo,
+    'steel': Colors.blueGrey,
+    'fire': Colors.red,
+    'water': Colors.blue,
+    'grass': Colors.green,
+    'electric': Colors.amber,
+    'psychic': Colors.pink,
+    'ice': Colors.cyan,
+    'dragon': Colors.indigo,
+    'dark': Colors.brown,
+    'fairy': Colors.pinkAccent,
+  };
 
   Color getTextColor(String name) {
     return name == 'normal' || name == 'fighting' || name == 'ground'
         ? Colors.black
         : Colors.white;
   }
+  
+    Color getTypeColor(String name) {
+    return typeColors[name] ?? Colors.grey;
+  }
+  
 }
