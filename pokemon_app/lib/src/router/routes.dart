@@ -5,7 +5,7 @@ import 'package:pokemon_app/src/views/detail_page.dart';
 import 'package:pokemon_app/src/views/home_page.dart';
 
 final router = GoRouter(
-  initialLocation: '/', // Ruta inicial
+  initialLocation: '/',
   routes: [
     // Ruta principal (HomePage)
     GoRoute(
@@ -13,9 +13,8 @@ final router = GoRouter(
       name: 'home',
       builder: (context, state) => HomePage(),
       routes: [
-        // Ruta de detalles del Pokémon
         GoRoute(
-          path: 'pokemon-detail', // Ruta sin parámetros dinámicos
+          path: 'pokemon-detail',
           name: 'pokemon-detail',
           builder: (BuildContext context, GoRouterState state) {
             // Obtener el Pokémon pasado como argumento
